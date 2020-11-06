@@ -40,9 +40,8 @@ export default function App() {
         }
     };
 
-
     return (
-        <View>
+        <View >
             <ScrollView style={{width: "100%"}}>
                 {currentAuthor && (
                     <Author author={authors.find(({id}) => id === currentAuthor)}
@@ -100,7 +99,8 @@ const Author = ({author, posts, handleAuthor, isAuthorSelected}) => {
 
     const onPostsSearch = (post) => {
         if (!search) return true;
-        return post.title.toLowerCase().includes(search.toLowerCase());
+        return (post.title.toLowerCase().includes(search.toLowerCase()) ||
+                post.body.toLowerCase().includes(search.toLowerCase()));
     };
 
     const btnTitle = isAuthorSelected ? "Back to Search" : "Show all posts";
@@ -124,12 +124,4 @@ const Author = ({author, posts, handleAuthor, isAuthorSelected}) => {
     )
 };
 
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: '#fff',
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-});
 
