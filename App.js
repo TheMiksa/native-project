@@ -1,8 +1,7 @@
 import {StatusBar} from 'expo-status-bar';
 import React, {useState, useEffect} from 'react';
-import {StyleSheet, Text, View, TextInput} from 'react-native';
+import {StyleSheet, Text, View, TextInput, Button, ScrollView} from 'react-native';
 import authorsData from "./src/services/service";
-import {Button} from "react-native-web";
 
 
 export default function App() {
@@ -43,27 +42,29 @@ export default function App() {
 
 
     return (
-        <View style={styles.container}>
-            {currentAuthor && (
-                <Author author={authors[currentAuthor]}
-                        posts={posts.filter(({userId}) => userId === currentAuthor)}
-                        handleAuthor={authors => handleAuthor(authors[currentAuthor])}
-                        isAuthorSelected={true}
-                />
-            )}
-            {!currentAuthor && (
-                <React.Fragment>
-                    <SearchPanel onSearch={setSearch}/>
-                    <AuthorList
-                        authors={authors}
-                        onAuthorSearch={onAuthorSearch}
-                        posts={posts}
-                        handleAuthor={handleAuthor}
+        <View>
+            <ScrollView style={{width: "100%"}}>
+                {currentAuthor && (
+                    <Author author={authors.find(({id}) => id === currentAuthor)}
+                            posts={posts.filter(({userId}) => userId === currentAuthor)}
+                            handleAuthor={handleAuthor}
+                            isAuthorSelected={true}
                     />
+                )}
+                {!currentAuthor && (
+                    <React.Fragment>
+                        <SearchPanel onSearch={setSearch}/>
+                        <AuthorList
+                            authors={authors}
+                            onAuthorSearch={onAuthorSearch}
+                            posts={posts}
+                            handleAuthor={handleAuthor}
+                        />
 
-                    <StatusBar style="auto"/>
-                </React.Fragment>
-            )}
+                        <StatusBar style="auto"/>
+                    </React.Fragment>
+                )}
+            </ScrollView>
         </View>
     );
 }
@@ -72,7 +73,7 @@ export default function App() {
 const SearchPanel = ({onSearch}) => {
     return (
         <TextInput
-            style={{height: 20, borderColor: 'gray', borderWidth: 1}}
+            style={{height: 20, borderColor: 'gray', borderWidth: 1, marginTop: 50}}
             onChangeText={onSearch}
         />
     )
@@ -115,9 +116,7 @@ const Author = ({author, posts, handleAuthor, isAuthorSelected}) => {
                     <Text>Body: {body}</Text>
                 </View>
             ))}
-            <Button onPress={() => {
-                handleAuthor(author.id)
-            }}
+            <Button onPress={() => {handleAuthor(author.id)}}
                     style={{backgroundColor: 'aqua', margin: "auto"}}
                     title={btnTitle}
             />
