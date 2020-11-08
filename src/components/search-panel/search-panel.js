@@ -4,8 +4,9 @@ import React from "react";
 const SearchPanel = ({onSearch}) => {
     return (
         <TextInput
-            style={{height: 20, borderColor: 'gray', borderWidth: 1, marginTop: 50}}
+            style={{height: 40, borderColor: 'gray', borderWidth: 1, marginTop: 10}}
             onChangeText={onSearch}
+            placeholder="Search"
         />
     )
 };

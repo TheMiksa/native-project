@@ -1,10 +1,10 @@
 import {StatusBar} from 'expo-status-bar';
 import React, {useState, useEffect} from 'react';
 import {View, ScrollView} from 'react-native';
+
 import authorsData from "./src/services/service";
 import AuthorList from "./src/components/author-list";
 import Author from "./src/components/author";
-import SearchPanel from "./src/components/search-panel";
 
 
 export default function App() {
@@ -54,21 +54,16 @@ export default function App() {
                     />
                 )}
                 {!currentAuthor && (
-                    <React.Fragment>
-                        <SearchPanel onSearch={setSearch}/>
                         <AuthorList
                             authors={authors}
                             onAuthorSearch={onAuthorSearch}
                             posts={posts}
                             handleAuthor={handleAuthor}
+                            onSearch={setSearch}
                         />
 
-                        <StatusBar style="auto"/>
-                    </React.Fragment>
                 )}
             </ScrollView>
         </View>
     );
 };
-
-
