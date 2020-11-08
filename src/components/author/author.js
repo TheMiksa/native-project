@@ -6,15 +6,15 @@ const Author = ({author, posts, handleAuthor, isAuthorSelected}) => {
 
     return (
                 <View style={{paddingBottom: 15}}>
-                    {isAuthorSelected ? (<AuthorFullPage author={author} posts={posts} handleAuthor={handleAuthor}/>) : (
-                                         <AuthorShortPage author={author} posts={posts} handleAuthor={handleAuthor}/>)}
+                    {isAuthorSelected && (<AuthorPosts author={author} posts={posts} handleAuthor={handleAuthor}/>)}
+                    {!isAuthorSelected && (<AuthorRow author={author} posts={posts} handleAuthor={handleAuthor}/>)}
                 </View>
             )
 
 };
 
 
-const AuthorFullPage = ({author, posts, handleAuthor}) => {
+const AuthorPosts = ({author, posts, handleAuthor}) => {
     const [search, setSearch] = useState("");
 
     const onPostsSearch = (post) => {
@@ -42,7 +42,7 @@ const AuthorFullPage = ({author, posts, handleAuthor}) => {
     );
 };
 
-const AuthorShortPage = ({author, posts, handleAuthor}) => {
+const AuthorRow = ({author, posts, handleAuthor}) => {
     return (
         <React.Fragment>
             <Text>{author.name}</Text>
