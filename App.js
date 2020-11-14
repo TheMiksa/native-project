@@ -7,11 +7,33 @@ import AuthorList from "./src/components/author-list";
 import Author from "./src/components/author";
 
 
+const toMixArray = (arr) => {
+    const newArr = [];
+    let i = 0;
+    while ( i < arr.length) {
+        let randEl = arr[Math.floor(Math.random() * arr.length)]
+        if (!newArr.includes(randEl)) {
+            newArr[i] = randEl;
+            i++
+        }
+    }
+    return newArr;
+};
+const colorsSet = [
+    "rgb(118, 215, 245)", "rgb(91, 232, 88)", "rgb(242, 237, 80)",
+    "rgb(242, 207, 80)", "rgb(242, 129, 80)", "rgb(80, 242, 231)",
+    "rgb(80, 175, 242)", "rgb(80, 107, 242)", "rgb(123, 80, 242)",
+    "rgb(199, 80, 242)", "rgb(242, 80, 196)", "rgb(242, 80, 139)",
+    "rgb(242, 80, 80)", "rgb(80, 145, 242)", "rgb(80, 242, 204)"
+];
+
+
 export default function App() {
     const [authors, setAuthors] = useState([]);
     const [posts, setPosts] = useState([]);
     const [search, setSearch] = useState("");
     const [currentAuthor, setCurrentAuthor] = useState(null);
+    const [colors, setColors] = useState(toMixArray(colorsSet));
 
     if (!posts.length) {
         authorsData.getPosts().then(setPosts);
@@ -60,6 +82,7 @@ export default function App() {
                             posts={posts}
                             handleAuthor={handleAuthor}
                             onSearch={setSearch}
+                            colors={colors}
                         />
 
                 )}
