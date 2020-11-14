@@ -2,10 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d3bec94b-c02d-4ce8-9d97-3ed4be33a71c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/assets/magnifier.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.json" beforeDir="false" afterPath="$PROJECT_DIR$/app.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/author-list/author-list.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/author-list/author-list.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/author/author.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/author/author.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/search-panel/search-panel.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/search-panel/search-panel.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,6 +19,13 @@
   </component>
   <component name="ComposerSettings">
     <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -34,6 +46,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.fileTypes" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -54,7 +67,8 @@
       <workItem from="1604693119069" duration="9214000" />
       <workItem from="1604857026922" duration="12516000" />
       <workItem from="1605348780641" duration="2942000" />
-      <workItem from="1605353040346" duration="1280000" />
+      <workItem from="1605353040346" duration="3851000" />
+      <workItem from="1605366543512" duration="10564000" />
     </task>
     <servers />
   </component>
@@ -62,10 +76,14 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="384" y="193" key="run.anything.popup" timestamp="1604869407557">
+    <state x="209" y="71" width="1022" height="737" key="SettingsEditor" timestamp="1605369006476">
       <screen x="0" y="27" width="1440" height="819" />
     </state>
-    <state x="384" y="193" key="run.anything.popup/0.27.1440.819@0.27.1440.819" timestamp="1604869407557" />
+    <state x="209" y="71" width="1022" height="737" key="SettingsEditor/0.27.1440.819@0.27.1440.819" timestamp="1605369006476" />
+    <state x="384" y="193" key="run.anything.popup" timestamp="1605375970189">
+      <screen x="0" y="27" width="1440" height="819" />
+    </state>
+    <state x="384" y="193" key="run.anything.popup/0.27.1440.819@0.27.1440.819" timestamp="1605375970189" />
     <state x="383" y="167" width="672" height="678" key="search.everywhere.popup" timestamp="1604693917494">
       <screen x="0" y="27" width="1440" height="819" />
     </state>

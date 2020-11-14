@@ -45,14 +45,26 @@ const AuthorPosts = ({author, posts, handleAuthor}) => {
 const AuthorRow = ({author, posts, handleAuthor}) => {
     return (
         <React.Fragment>
-            <Text>{author.name}</Text>
-            <Text style={{fontSize: 10, color: 'grey'}}>
-                {author.email}
-            </Text>
-            <Button onPress={() => {handleAuthor(author.id)}}
-                    style={{backgroundColor: 'aqua', margin: "auto"}}
-                    title={`${posts.length} posts`}
-            />
+            <View style={{
+
+                flexDirection: "row",
+                heightMin: 100,
+                padding: 10
+            }}>
+                <View style={{flex: 0.7}}>
+                    <Text>{author.name}</Text>
+                    <Text style={{fontSize: 10, color: 'grey'}}>
+                        {author.email}
+                    </Text>
+                </View>
+                <View style={{flex: 0.3}}>
+                    <Button onPress={() => {handleAuthor(author.id)}}
+                            color="rgb(100, 86, 235)"
+                            title={`${posts.length} posts`}
+                    />
+                </View>
+            </View>
+
         </React.Fragment>
     );
 };

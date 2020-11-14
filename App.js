@@ -1,11 +1,10 @@
-import {StatusBar} from 'expo-status-bar';
+
 import React, {useState, useEffect} from 'react';
-import {View, ScrollView} from 'react-native';
+import { StatusBar, View, ScrollView } from 'react-native';
 
 import authorsData from "./src/services/service";
 import AuthorList from "./src/components/author-list";
 import Author from "./src/components/author";
-
 
 const toMixArray = (arr) => {
     const newArr = [];
@@ -24,7 +23,8 @@ const colorsSet = [
     "rgb(242, 207, 80)", "rgb(242, 129, 80)", "rgb(80, 242, 231)",
     "rgb(80, 175, 242)", "rgb(80, 107, 242)", "rgb(123, 80, 242)",
     "rgb(199, 80, 242)", "rgb(242, 80, 196)", "rgb(242, 80, 139)",
-    "rgb(242, 80, 80)", "rgb(80, 145, 242)", "rgb(80, 242, 204)"
+    "rgb(242, 80, 80)", "rgb(80, 145, 242)", "rgb(80, 242, 204)",
+    "rgb(100, 86, 235)"
 ];
 
 
@@ -34,6 +34,8 @@ export default function App() {
     const [search, setSearch] = useState("");
     const [currentAuthor, setCurrentAuthor] = useState(null);
     const [colors, setColors] = useState(toMixArray(colorsSet));
+
+
 
     if (!posts.length) {
         authorsData.getPosts().then(setPosts);
@@ -66,7 +68,9 @@ export default function App() {
     };
 
     return (
-        <View >
+        <View  style={{
+            backgroundColor: "rgb(243, 242, 255)"}}>
+            <StatusBar backgroundColor="rgb(80, 175, 242)"/>
             <ScrollView style={{width: "100%"}}>
                 {currentAuthor && (
                     <Author author={authors.find(({id}) => id === currentAuthor)}
