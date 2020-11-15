@@ -25,7 +25,8 @@ const AuthorList = ({authors, onAuthorSearch, posts, handleAuthor, onSearch, col
                        <Text style={{
                            borderRadius: 50,
                            width: 50, height: 50,
-                           paddingVertical: 15, margin: "1%",
+                           paddingVertical: 15,
+                           margin: "1%",
                            backgroundColor: colors[id],
                            textAlign: "center"
 

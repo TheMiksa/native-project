@@ -1,5 +1,5 @@
-import React, {useState} from "react";
-import {Button, Text, View} from "react-native";
+import React, {useState, useEffect} from "react";
+import {Button, Text, View, BackHandler, Alert} from "react-native";
 import SearchPanel from "../search-panel";
 
 const Author = ({author, posts, handleAuthor, isAuthorSelected}) => {
@@ -16,6 +16,21 @@ const Author = ({author, posts, handleAuthor, isAuthorSelected}) => {
 
 const AuthorPosts = ({author, posts, handleAuthor}) => {
     const [search, setSearch] = useState("");
+
+    useEffect(() => {
+        const backAction = () => {
+            handleAuthor(author.id);
+            return true;
+        };
+
+        const backHandler = BackHandler.addEventListener(
+            "hardwareBackPress",
+            backAction
+        );
+
+        return () => backHandler.remove();
+    }, []);
+
 
     const onPostsSearch = (post) => {
         if (!search) return true;
@@ -34,7 +49,7 @@ const AuthorPosts = ({author, posts, handleAuthor}) => {
                         <Text>Body: {body}</Text>
                     </View>
                 ))}
-            <Button onPress={() => {handleAuthor(author.id)}}
+            <Button onPress={() => handleAuthor(author.id)}
                     style={{backgroundColor: 'aqua', margin: "auto"}}
                     title="Back to Search"
             />
@@ -58,6 +73,7 @@ const AuthorRow = ({author, posts, handleAuthor}) => {
                     </Text>
                 </View>
                 <View style={{flex: 0.3}}>
+
                     <Button onPress={() => {handleAuthor(author.id)}}
                             color="rgb(100, 86, 235)"
                             title={`${posts.length} posts`}

@@ -2,9 +2,9 @@
   "expo": {
     "name": "native-project",
     "slug": "native-project",
-    "version": "1.0.0",
+    "version": "1.2.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/logo192.png",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",

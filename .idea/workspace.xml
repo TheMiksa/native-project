@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d3bec94b-c02d-4ce8-9d97-3ed4be33a71c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/assets/magnifier.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/logo192.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.json" beforeDir="false" afterPath="$PROJECT_DIR$/app.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
@@ -39,6 +38,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/assets" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -50,6 +50,9 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/assets" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/components" />
     </key>
@@ -68,7 +71,9 @@
       <workItem from="1604857026922" duration="12516000" />
       <workItem from="1605348780641" duration="2942000" />
       <workItem from="1605353040346" duration="3851000" />
-      <workItem from="1605366543512" duration="10564000" />
+      <workItem from="1605366543512" duration="15782000" />
+      <workItem from="1605386270727" duration="27000" />
+      <workItem from="1605439405233" duration="2017000" />
     </task>
     <servers />
   </component>
@@ -76,6 +81,10 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="369" y="238" width="692" height="403" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1605381038079">
+      <screen x="0" y="27" width="1440" height="819" />
+    </state>
+    <state x="369" y="238" width="692" height="403" key="#com.intellij.fileTypes.FileTypeChooser/0.27.1440.819@0.27.1440.819" timestamp="1605381038079" />
     <state x="209" y="71" width="1022" height="737" key="SettingsEditor" timestamp="1605369006476">
       <screen x="0" y="27" width="1440" height="819" />
     </state>
