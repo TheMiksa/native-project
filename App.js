@@ -1,6 +1,6 @@
 
 import React, {useState, useEffect} from 'react';
-import { StatusBar, View, ScrollView } from 'react-native';
+import { StatusBar, View, ScrollView, Alert } from 'react-native';
 
 import authorsData from "./src/services/service";
 import AuthorList from "./src/components/author-list";
@@ -19,12 +19,18 @@ const toMixArray = (arr) => {
     return newArr;
 };
 const colorsSet = [
-    "rgb(118, 215, 245)", "rgb(91, 232, 88)", "rgb(242, 237, 80)",
-    "rgb(242, 207, 80)", "rgb(242, 129, 80)", "rgb(80, 242, 231)",
-    "rgb(80, 175, 242)", "rgb(80, 107, 242)", "rgb(123, 80, 242)",
-    "rgb(199, 80, 242)", "rgb(242, 80, 196)", "rgb(242, 80, 139)",
-    "rgb(242, 80, 80)", "rgb(80, 145, 242)", "rgb(80, 242, 204)",
-    "rgb(100, 86, 235)"
+    "rgb(242, 80, 80)", "rgb(242, 166, 80)", "rgb(242, 215, 80)",
+    "rgb(242, 242, 80)", "rgb(223, 242, 80)", "rgb(200, 242, 80)",
+    "rgb(169, 242, 80)", "rgb(98, 242, 80)", "rgb(80, 242, 107)",
+    "rgb(80, 242, 161)", "rgb(80, 242, 203)", "rgb(80, 242, 242)",
+    "rgb(80, 223, 242)", "rgb(80, 205, 242)", "rgb(80, 191, 242)",
+    "rgb(80, 169, 242)", "rgb(80, 147, 242)", "rgb(80, 132, 242)",
+    "rgb(80, 112, 242)", "rgb(80, 98, 242)", "rgb(80, 85, 242)",
+    "rgb(98, 80, 242)", "rgb(122, 80, 242)", "rgb(134, 80, 242)",
+    "rgb(161, 80, 242)", "rgb(178, 80, 242)", "rgb(188, 80, 242)",
+    "rgb(205, 80, 242)", "rgb(225, 80, 242)", "rgb(242, 80, 242)",
+    "rgb(242, 80, 218)", "rgb(242, 80, 186)", "rgb(242, 80, 156)",
+    "rgb(242, 80, 129)", "rgb(242, 80, 107)", "rgb(242, 80, 93)"
 ];
 
 
@@ -35,14 +41,38 @@ export default function App() {
     const [currentAuthor, setCurrentAuthor] = useState(null);
     const [colors, setColors] = useState(toMixArray(colorsSet));
 
+    useEffect(() => {
+        authorsData.getPosts()
+            .then(setPosts)
+            .catch(error =>  {
+                Alert.alert("Something has wrong (can't get Posts)",
+                    `${error.message}`,
+                    [{
+                    text: "Ok",
+                        onPress: () => null,
+                        style: "ok"
+                    }])
+            throw error;});
+        authorsData.getAuthors()
+            .then(setAuthors)
+            .catch(error =>  {
+                Alert.alert("Something has wrong (can't get Authors)",
+                    `${error.message}`,
+                    [{
+                        text: "Ok",
+                        onPress: () => null,
+                        style: "ok"
+                    }])
+                throw error;});
+    }, []);
 
 
-    if (!posts.length) {
+    /*if (!posts.length) {
         authorsData.getPosts().then(setPosts);
     }
     if (!authors.length) {
         authorsData.getAuthors().then(setAuthors);
-    }
+    }*/
 
     const onAuthorSearch = (author) => {
         if (currentAuthor) {
@@ -69,7 +99,8 @@ export default function App() {
 
     return (
         <View  style={{
-            backgroundColor: "rgb(243, 242, 255)"}}>
+            marginLeft: 10,
+            marginRight: 10}}>
             <StatusBar backgroundColor="rgb(80, 175, 242)"/>
             <ScrollView style={{width: "100%"}}>
                 {currentAuthor && (

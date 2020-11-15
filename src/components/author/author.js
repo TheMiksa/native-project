@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from "react";
-import {Button, Text, View, BackHandler, Alert} from "react-native";
+import {Button, Text, View, BackHandler } from "react-native";
 import SearchPanel from "../search-panel";
+import Post from "../post";
 
 const Author = ({author, posts, handleAuthor, isAuthorSelected}) => {
 
@@ -43,11 +44,8 @@ const AuthorPosts = ({author, posts, handleAuthor}) => {
             <Text>{`${author.name}'s`}</Text>
             <SearchPanel onSearch={setSearch}/>
             {posts.filter(onPostsSearch)
-                .map(({title, body, id}) => (
-                    <View key={id} style={{paddingBottom: 10}}>
-                        <Text style={{paddingTop: 5, paddingBottom: 5}}>Title: {title}</Text>
-                        <Text>Body: {body}</Text>
-                    </View>
+                .map(post => (
+                    <Post post={post}></Post>
                 ))}
             <Button onPress={() => handleAuthor(author.id)}
                     style={{backgroundColor: 'aqua', margin: "auto"}}
@@ -73,11 +71,16 @@ const AuthorRow = ({author, posts, handleAuthor}) => {
                     </Text>
                 </View>
                 <View style={{flex: 0.3}}>
-
-                    <Button onPress={() => {handleAuthor(author.id)}}
+                    <Text style={{
+                        color: "rgb(100, 86, 235)",
+                        textAlign: "center",
+                        marginTop: 5}}>
+                        {`${posts.length} posts`}
+                    </Text>
+                    {/*<Button onPress={() => {handleAuthor(author.id)}}
                             color="rgb(100, 86, 235)"
                             title={`${posts.length} posts`}
-                    />
+                    />*/}
                 </View>
             </View>
 
