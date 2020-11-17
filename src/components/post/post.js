@@ -5,18 +5,19 @@ const Post = ({post: {id, title, body}}) => {
     return (
         <View key={id}
               style={{
-                  paddingBottom: 10,
+                  marginBottom: 5,
                   backgroundColor: "rgb(195, 90, 255)",
                   borderRadius: 5}}>
             <Text
                 style={{
-                    paddingTop: 5,
-                    paddingBottom: 5,
+                    padding: 5,
                     backgroundColor: "rgb(162, 0, 255)",
                     borderRadius: 5}}>
                 Title: {title}
             </Text>
-            <Text>
+            <Text style={{
+                padding: 5
+            }}>
                 Body: {body}
             </Text>
         </View>
