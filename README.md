@@ -1,4 +1,10 @@
 # Authors-App
+
+Use these API endpoints to get the required data.
+
+https://jsonplaceholder.typicode.com/users
+https://jsonplaceholder.typicode.com/posts
+
 A small application created with React Native as a test.
 ![screenshot_1](https://github.com/TheMiksa/Authors-App/blob/master/assets/screenshot_1.jpg)
 
